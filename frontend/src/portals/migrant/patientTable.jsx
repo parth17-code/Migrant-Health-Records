@@ -1,18 +1,12 @@
 import React, { useState,useEffect } from 'react';
 import PatientData from './patientData';
 import SearchBox from './searchBar';
+import mockData from './temp_data/mockPatientData.json'; // Import the mock data
 const API = '';
 
 export default function PatientTable({queryState, onRowClick}){
 
-    const filterTable = (patient) =>{
-        const Name = patient.Name.toLowerCase();
-        const Id = patient.Id.toLowerCase();
 
-        const searchquery = searchState.toLowerCase();
-
-        return Id.includes(searchquery) || Name.includes(searchquery);
-    }
 
     const [patient,setPatient] = useState([]);
 
@@ -24,30 +18,41 @@ export default function PatientTable({queryState, onRowClick}){
         'Completed':["Patient Id","Patient Name","Assigned Date","Completed Date","Upload Documents","Assigned Category","NGO Help Request"]
     }
 
-    const headers = tableHeaders[queryState];
+        const filterTable = (patient) =>{
+        const Name = patient.Name.toLowerCase();
+        const Id = patient.Id.toLowerCase();
 
-    const fetchData = async (url) => {
-        try{
-                const res = await fetch(url);
-                const data = await res.json();
-                if (data.length > 0){
-                    setPatient(data);
-                }
-        }catch (e){
-            console.error(e);
-        }
+        const searchquery = searchState.toLowerCase();
+
+        return (Id.includes(searchquery) || Name.includes(searchquery)) && patient.CurrentStatus === queryState;
     }
 
+    const headers = tableHeaders[queryState];
+
+    // const fetchData = async (url) => {
+    //     try{
+    //             const res = await fetch(url);
+    //             const data = await res.json();
+    //             if (data.length > 0){
+    //                 setPatient(data);
+    //             }
+    //     }catch (e){
+    //         console.error(e);
+    //     }
+    // }
+
     useEffect ( () => {
-        fetchData(API);
+        // fetchData(API);
+        // For now, we will use the local mock data
+        setPatient(mockData);
     },[])
 
     return <>
     <SearchBox query={searchState} setQuery={setSearchState}/>
-    <table>
-        <thead>
+    <table className="rounded-lg p-6 w-full border-collapse ">
+        <thead className="">
             <tr>
-                {headers.map((title) => {return<th key={title}>{title}</th>})}
+                {headers.map((title) => {return<th key={title} className="px-4 py-2">{title}</th>})}
             </tr>
         </thead>
         <tbody>

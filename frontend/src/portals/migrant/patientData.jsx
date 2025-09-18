@@ -9,7 +9,7 @@ const QueueData = ({data, onRowClick}) =>{
             <td>{District}</td>
             <td>{RegistrationDate}</td>
             <td>{CurrentStatus}</td>
-            <td>{Action}</td>
+            <td><button>{Action}</button></td>
         </tr>
     })}
 </>
@@ -24,7 +24,7 @@ const ProgressData = ({data, onRowClick}) =>{
             <td>{District}</td>
             <td>{RegistrationDate}</td>
             <td>{CurrentStatus}</td>
-            <td>{Action}</td>
+            <td><button>{Action}</button></td>
         </tr>
     })
     }
@@ -41,7 +41,8 @@ const CompletedData = ({data, onRowClick}) =>{
             <td>{District}</td>
             <td>{RegistrationDate}</td>
             <td>{CurrentStatus}</td>
-            <td>{Action}</td>
+            <td><button>{Action}</button></td>
+            <td><button>Request Help</button></td>
         </tr>
     })}
     </>

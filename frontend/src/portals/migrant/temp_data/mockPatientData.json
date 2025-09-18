@@ -1,0 +1,41 @@
+[
+  {
+    "Id": "MIGR-001",
+    "Name": "Rajesh Kumar",
+    "QrSource": "/qr/rajesh-kumar.png",
+    "District": "Mumbai",
+    "RegistrationDate": "2023-10-26",
+    "AssignedDate": "2023-10-27",
+    "CompletedDate": "2023-10-28",
+    "CurrentStatus": "In Queue",
+    "Action": "Assign",
+    "AssignedCategory": "N/A",
+    "NGOHelpRequest": "No"
+  },
+  {
+    "Id": "MIGR-002",
+    "Name": "Sunita Sharma",
+    "QrSource": "/qr/sunita-sharma.png",
+    "District": "Delhi",
+    "RegistrationDate": "2023-10-25",
+    "AssignedDate": "2023-10-26",
+    "CompletedDate": "2023-10-29",
+    "CurrentStatus": "In Progress",
+    "Action": "View Details",
+    "AssignedCategory": "General Health",
+    "NGOHelpRequest": "No"
+  },
+  {
+    "Id": "MIGR-003",
+    "Name": "Amit Patel",
+    "QrSource": "/qr/amit-patel.png",
+    "District": "Ahmedabad",
+    "RegistrationDate": "2023-10-24",
+    "AssignedDate": "2023-10-25",
+    "CompletedDate": "2023-10-30",
+    "CurrentStatus": "Completed",
+    "Action": "Upload",
+    "AssignedCategory": "Orthopedic",
+    "NGOHelpRequest": "Yes"
+  }
+]

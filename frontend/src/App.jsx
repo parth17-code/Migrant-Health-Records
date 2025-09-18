@@ -1,13 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import LoginForm from './portals/migrant/login'
+import './App.css';
+import {useState} from 'react';
+
+import LoginForm from './portals/migrant/login';
+import Dashboard from './portals/migrant/dashboard';
+import RegisterForm from './portals/migrant/register';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [page,setPage] = useState("login");
 
   return (
     <>
-    <LoginForm></LoginForm>
+    {page==="login" ? (<LoginForm changePage={setPage}/>) : page ==="register" ? (<RegisterForm changePage={setPage}/>) : page==="Dashboard" && (<Dashboard changePage={setPage}/>)
+    }
     </>
   )
 }
