@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import PatientData_v2 from './patientData_v2';
 import SearchBox from './searchBar';
-import mockData from './temp_data/mockPatientData.json'; // Import the mock data
+import mockData from '../temp_data/mockPatientData.json'; // Import the mock data
 const API = '';
 
 export default function PatientTable({queryState, onRowClick, onNGOClick ,NGORequest}){

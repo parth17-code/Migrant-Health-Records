@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
-import PatientTable from './patientTable';
-import PatientCard from './patientCard';
-import NGORequestCard from './NGORequest';
+import PatientTable from './dashboard_components/patientTable';
+import PatientCard from './dashboard_components/patientCard';
+import NGORequestCard from './dashboard_components/NGORequest';
 
 
 
@@ -45,7 +45,7 @@ export default function Dashboard() {
 <div className="min-h-screen flex flex-col justify-center items-center ">
      
     <div className="size-auto">
-        <h1 className="text-2xl font-bold text-center mt-4 mb-4">Patient DashBoard</h1>
+        <h1 className="text-2xl font-bold text-center mt-4 mb-4">Hospital DashBoard</h1>
 
         <div className="rounded-xl shadow-lg p-6">
             <div className="tabSwitcher flex space-x-4 justify-center mb-4">
