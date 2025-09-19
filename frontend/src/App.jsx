@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import LoginForm from './portals/migrant/login'
+import LoginForm from './portals/hospital/login'
 
 function App() {
   const [count, setCount] = useState(0)
