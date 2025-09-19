@@ -7,20 +7,14 @@ function RegisterForm({changePage}) {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevents the default form submission behavior
+    event.preventDefault(); 
     if (password !== confirmPassword) {
       alert("Passwords don't match!");
       return;
     }
-    // For now, we'll just log the data. Later, you can send it to your backend.
-    console.log({
-      email,
-      password,
-    });
-    // You might want to navigate to the dashboard or login page after successful registration
+    console.log({email,password,confirmPassword});
     changePage("Dashboard");
   };
-
 
 return <div className="Background flex items-center justify-center min-h-screen bg-none"> 
 <div className="OuterBox bg-[#0870CF] w-sm rounded-md p-8"> 

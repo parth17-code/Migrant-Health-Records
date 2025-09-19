@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import PatientTable from './patientTable';
 import PatientCard from './patientCard';
+import NGORequestCard from './NGORequest';
 
 
 
@@ -19,6 +20,8 @@ return <>
 export default function Dashboard() {
 
     const [selectedPatient,setPatient] = useState(null);
+    const [showNGORequest, setShowNGORequest] = useState(false);
+    const [patientN,setPatientN] = useState(null);
 
     const handlePatientClick = (patient) => {
         setPatient(patient);
@@ -26,6 +29,14 @@ export default function Dashboard() {
 
     const handleClosePatientCard = () => {
         setPatient(null);
+    }
+
+    const handleNGORequestOpen = () => {
+        setShowNGORequest(true);
+    }
+
+    const handleNGORequestClose = () => {
+        setShowNGORequest(false);
     }
 
     const [queryState,setQueryState] = useState("In Queue");
@@ -42,7 +53,7 @@ export default function Dashboard() {
             </div>
     
             <div className="Table rounded-lg">
-                <PatientTable queryState={queryState} onRowClick={handlePatientClick}/>
+                <PatientTable queryState={queryState} onRowClick={handlePatientClick} patientSelect={setPatient} NGORequest={setPatientN} onNGOClick = {handleNGORequestOpen}/>
             </div>
         </div>
     </div>
@@ -50,5 +61,8 @@ export default function Dashboard() {
 </div>
  { selectedPatient && ( <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center">
              <PatientCard patient={selectedPatient} onClose={handleClosePatientCard} />
-        </div>)}</>
+        </div>)}
+ { showNGORequest && ( <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center">
+        <NGORequestCard patient={patientN} onClose={handleNGORequestClose} />
+    </div>)}</>
 )}

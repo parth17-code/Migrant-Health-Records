@@ -6,7 +6,7 @@ export default function PatientCard({patient, onClose}){
         <button className="closeCard" onClick={onClose}>X</button>
         <h2>Patient Details</h2>
         <p>Patients Name: {patient.Name} </p>
-        <p>Patient ID : {patient.ID}</p>
+        <p>Patient ID : {patient.Id}</p>
     </div>
     </>
 }

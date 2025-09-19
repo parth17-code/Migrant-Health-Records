@@ -35,7 +35,72 @@
     "CompletedDate": "2023-10-30",
     "CurrentStatus": "Completed",
     "Action": "Upload",
-    "AssignedCategory": "Orthopedic",
+    "AssignedCategory": "At Risk",
+    "NGOHelpRequest": "Yes"
+  },
+  {
+    "Id": "MIGR-004",
+    "Name": "Priya Singh",
+    "QrSource": "/qr/priya-singh.png",
+    "District": "Bangalore",
+    "RegistrationDate": "2023-10-28",
+    "AssignedDate": "2023-10-29",
+    "CompletedDate": "2023-11-01",
+    "CurrentStatus": "In Queue",
+    "Action": "Assign",
+    "AssignedCategory": "N/A",
+    "NGOHelpRequest": "No"
+  },
+  {
+    "Id": "MIGR-005",
+    "Name": "Rohan Mehta",
+    "QrSource": "/qr/rohan-mehta.png",
+    "District": "Pune",
+    "RegistrationDate": "2023-10-29",
+    "AssignedDate": "2023-10-30",
+    "CompletedDate": "2023-11-02",
+    "CurrentStatus": "In Progress",
+    "Action": "View Details",
+    "AssignedCategory": "Pediatrics",
+    "NGOHelpRequest": "No"
+  },
+  {
+    "Id": "MIGR-006",
+    "Name": "Anjali Gupta",
+    "QrSource": "/qr/anjali-gupta.png",
+    "District": "Kolkata",
+    "RegistrationDate": "2023-10-30",
+    "AssignedDate": "2023-10-31",
+    "CompletedDate": "2023-11-03",
+    "CurrentStatus": "Completed",
+    "Action": "Upload",
+    "AssignedCategory": "Critical",
+    "NGOHelpRequest": "No"
+  },
+  {
+    "Id": "MIGR-007",
+    "Name": "Vikram Rathore",
+    "QrSource": "/qr/vikram-rathore.png",
+    "District": "Chennai",
+    "RegistrationDate": "2023-11-01",
+    "AssignedDate": "2023-11-02",
+    "CompletedDate": "2023-11-04",
+    "CurrentStatus": "In Queue",
+    "Action": "Assign",
+    "AssignedCategory": "N/A",
+    "NGOHelpRequest": "No"
+  },
+  {
+    "Id": "MIGR-008",
+    "Name": "Sneha Reddy",
+    "QrSource": "/qr/sneha-reddy.png",
+    "District": "Hyderabad",
+    "RegistrationDate": "2023-11-02",
+    "AssignedDate": "2023-11-03",
+    "CompletedDate": "2023-11-05",
+    "CurrentStatus": "In Progress",
+    "Action": "View Details",
+    "AssignedCategory": "Dermatology",
     "NGOHelpRequest": "Yes"
   }
 ]

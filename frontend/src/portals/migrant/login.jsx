@@ -6,10 +6,8 @@ function LoginForm({changePage}) {
   const [password, setPassword] = useState('');
 
   const handleLogin = (event) => {
-    event.preventDefault(); // Stop the page from reloading
-    // Here you would typically handle the login logic, e.g., call an API
-    console.log('Logging in with:', { email, password });
-    // On successful login, change the page
+    event.preventDefault(); 
+    console.log( { email, password });
     changePage("Dashboard");
   };
 

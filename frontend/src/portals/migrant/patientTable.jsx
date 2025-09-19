@@ -1,10 +1,10 @@
 import React, { useState,useEffect } from 'react';
-import PatientData from './patientData';
+import PatientData_v2 from './patientData_v2';
 import SearchBox from './searchBar';
 import mockData from './temp_data/mockPatientData.json'; // Import the mock data
 const API = '';
 
-export default function PatientTable({queryState, onRowClick}){
+export default function PatientTable({queryState, onRowClick, onNGOClick ,NGORequest}){
 
 
 
@@ -49,14 +49,14 @@ export default function PatientTable({queryState, onRowClick}){
 
     return <>
     <SearchBox query={searchState} setQuery={setSearchState}/>
-    <table className="rounded-lg p-6 w-full border-collapse ">
+    <table className="rounded-lg p-6 w-full border-separate border-spacing-y-2 ">
         <thead className="">
             <tr>
                 {headers.map((title) => {return<th key={title} className="px-4 py-2">{title}</th>})}
             </tr>
         </thead>
         <tbody>
-            <PatientData patient={patient.filter(filterTable)} tab={queryState} clickable={onRowClick}/>
+            <PatientData_v2 patient={patient.filter(filterTable)} tab={queryState} clickable={onRowClick} onNGOClick={onNGOClick} NGORequest={NGORequest}/>
         </tbody>
     </table>
     
