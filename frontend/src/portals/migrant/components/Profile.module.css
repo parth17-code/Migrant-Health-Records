@@ -1,0 +1,67 @@
+.card {
+  background-color: #1565c0;
+  color: white;
+  border: 2px dashed rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 30px;
+  width: 500px;
+  max-width: 90%;
+  position: relative;
+}
+.backButton {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+}
+.name {
+  font-size: 1.8rem;
+}
+.qrCode {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details p {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.settingsButton, .signOutButton {
+  background-color: white;
+  color: #1565c0;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}

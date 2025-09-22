@@ -23,23 +23,15 @@
   align-items: center;
 }
 .card {
-  display: flex;                 /* needed for justify/align to work */
-  flex-direction: column;        /* stack children vertically */
-  justify-content: center;       /* vertical alignment */
-  align-items: center;           /* horizontal alignment */
-  background-color: #1565c0;
+  background-color: #1565c0; /* Slightly lighter blue for the card */
   border: 2px dashed rgba(255, 255, 255, 0.7);
   border-radius: 20px;
-  padding: 30px 20px;            /* smaller horizontal padding on small screens */
-  width: 200rem;
-  max-width: 450px;              /* responsive max width */
+  padding: 40px;
+  width: 450px;
+  max-width: 90%;
   color: white;
   text-align: center;
-  box-sizing: border-box;        /* include padding in width */
-  overflow-y: auto;              /* scroll if content exceeds viewport */
-  max-height: 90vh;              /* prevents card from exceeding screen height */
 }
-
 
 .title {
   margin-top: 0;

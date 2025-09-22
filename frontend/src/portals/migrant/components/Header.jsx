@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css';
-import logo from '/20.svg'; // Make sure you have this logo in assets
+import logo from '/logo1.svg'; // Make sure you have this logo in assets
 
 function Header() {
   return (

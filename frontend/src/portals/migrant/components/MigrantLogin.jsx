@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
 import styles from './MigrantLogin.module.css';
-import Header from './Header';
 
-// 1. Accept the 'onNavigateToRegister' function as a prop here
-function MigrantLogin({ onNext, onNavigateToRegister }) {
+// 1. Accept 'onLoginSuccess' here instead of 'onNext'
+function MigrantLogin({ onLoginSuccess, onNavigateToRegister }) {
   const [mobileNumber, setMobileNumber] = useState('');
   const [otp, setOtp] = useState('');
+  const [error, setError] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
     if (mobileNumber && otp) {
-      onNext({ mobileNumber });
+      setError('');
+      // 2. Call the correct prop name: 'onLoginSuccess'
+      onLoginSuccess({ mobileNumber }); 
     } else {
-      alert('Please fill in both fields.');
+      setError('Please fill in both mobile number and OTP.');
     }
   };
+  
   const handleRegisterClick = (e) => {
-    e.preventDefault(); // This stops the page from adding '#' to the URL
-    onNavigateToRegister(); // This calls the function from App.jsx to change the page
+    e.preventDefault();
+    onNavigateToRegister();
   };
 
   return (
-  <>
     <div className={styles.card}>
       <h2 className={styles.title}>MIGRANT LOGIN</h2>
       <form onSubmit={handleLogin} className={styles.form}>
-        {/* ... form inputs and login button are unchanged ... */}
         <div className={styles.inputGroup}>
           <label htmlFor="mobile">Enter Mobile Number:</label>
           <input
@@ -50,15 +51,16 @@ function MigrantLogin({ onNext, onNavigateToRegister }) {
         </div>
         <button type="submit" className={styles.primaryButton}>Login</button>
       </form>
+      
+      {error && <p className={styles.errorText}>{error}</p>}
+      
       <p className={styles.footerText}>
         Don't have an account?{' '}
-        {/* 3. Add the onClick event to the link to trigger the handler function */}
         <a href="#" onClick={handleRegisterClick} className={styles.registerLink}>
           Register now
         </a>
       </p>
     </div>
-    </>
   );
 }
 

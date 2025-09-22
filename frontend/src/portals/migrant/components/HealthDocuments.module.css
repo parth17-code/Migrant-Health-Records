@@ -1,0 +1,41 @@
+.card {
+  background-color: #1565c0;
+  color: white;
+  border: 2px dashed rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 30px;
+  width: 500px;
+  max-width: 90%;
+  position: relative;
+}
+.backButton {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.documentList {
+  margin-top: 20px;
+}
+.documentItem {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.folderIcon {
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
