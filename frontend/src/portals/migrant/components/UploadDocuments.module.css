@@ -1,0 +1,92 @@
+/* Reuse .card, .title, button styles from previous CSS files */
+.card {
+  background-color: #1565c0;
+  border: 2px dashed rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 40px;
+  width: 450px;
+  max-width: 90%;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.backButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: 2px solid white;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.uploadArea {
+  border: 2px dashed #bbdefb;
+  border-radius: 15px;
+  padding: 40px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.uploadArea:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.uploadIcon {
+  width: 60px;
+  margin-bottom: 15px;
+  filter: invert(1);
+}
+
+.uploadArea p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.infoText {
+  color: #bbdefb;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.primaryButton, .secondaryButton {
+  flex: 1;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.primaryButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.secondaryButton {
+  background-color: white;
+  color: #1565c0;
+}
