@@ -5,8 +5,6 @@ function RoleSelection({ onSelectMode }) {
   return (
     <div className={styles.container}>
       <div className={styles.logoArea}>
-        {/* You can place your Jeevitham logo here */}
-        <h1>JEEVITHAM</h1>
         <p>Health Records for Migrants</p>
       </div>
       <div className={styles.buttonGroup}>
