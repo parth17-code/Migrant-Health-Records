@@ -12,6 +12,7 @@ import HealthDocuments from './portals/migrant/components/HealthDocuments';
 import MigrantRegistrationForm from './portals/migrant/components/MigrantRegistrationForm';
 import BackgroundGraphics from './portals/migrant/components/BackgroundGraphics.jsx';
 import Header from './portals/migrant/components/Header.jsx'
+import NgoRegistration from './portals/ngo/NgoRegistration.jsx';
 
 
 function App() {
