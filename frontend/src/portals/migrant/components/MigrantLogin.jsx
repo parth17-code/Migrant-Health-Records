@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import styles from './MigrantLogin.module.css';
 
-// 1. Accept 'onLoginSuccess' here instead of 'onNext'
-function MigrantLogin({ onLoginSuccess, onNavigateToRegister }) {
+function MigrantLogin({ onLoginSuccess, onNavigateToRegister, onBack }) {
   const [mobileNumber, setMobileNumber] = useState('');
   const [otp, setOtp] = useState('');
   const [error, setError] = useState('');
@@ -11,8 +10,7 @@ function MigrantLogin({ onLoginSuccess, onNavigateToRegister }) {
     e.preventDefault();
     if (mobileNumber && otp) {
       setError('');
-      // 2. Call the correct prop name: 'onLoginSuccess'
-      onLoginSuccess({ mobileNumber }); 
+      onLoginSuccess({ mobileNumber });
     } else {
       setError('Please fill in both mobile number and OTP.');
     }
@@ -25,6 +23,7 @@ function MigrantLogin({ onLoginSuccess, onNavigateToRegister }) {
 
   return (
     <div className={styles.card}>
+      <button className={styles.backButton} onClick={onBack}>&lt;</button>
       <h2 className={styles.title}>MIGRANT LOGIN</h2>
       <form onSubmit={handleLogin} className={styles.form}>
         <div className={styles.inputGroup}>

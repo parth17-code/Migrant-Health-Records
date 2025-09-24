@@ -1,11 +1,14 @@
-.errorText {
-  color: #ffcdd2; /* A light red color for the text */
-  font-size: 0.85rem;
-  margin-top: 5px;
-  margin-bottom: 0;
-  text-align: left;
+.card {
+  background-color: #1565c0;
+  border: 2px dashed rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 40px;
+  width: 450px;
+  max-width: 90%;
+  color: white;
+  text-align: center;
+  position: relative;
 }
-
 .backButton {
   position: absolute;
   top: 20px;
@@ -22,40 +25,25 @@
   justify-content: center;
   align-items: center;
 }
-.card {
-  background-color: #1565c0; /* Slightly lighter blue for the card */
-  border: 2px dashed rgba(255, 255, 255, 0.7);
-  border-radius: 20px;
-  padding: 40px;
-  width: 450px;
-  max-width: 90%;
-  color: white;
-  text-align: center;
-}
-
 .title {
   margin-top: 0;
   margin-bottom: 30px;
   font-size: 1.8rem;
   letter-spacing: 1px;
 }
-
 .form {
   display: flex;
   flex-direction: column;
 }
-
 .inputGroup {
   text-align: left;
   margin-bottom: 15px;
 }
-
 .inputGroup label {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
 }
-
 .inputField {
   width: 100%;
   padding: 12px;
@@ -64,7 +52,6 @@
   font-size: 1rem;
   box-sizing: border-box;
 }
-
 .otpButton {
   background-color: #4caf50;
   color: white;
@@ -76,11 +63,9 @@
   margin-bottom: 25px;
   transition: background-color 0.2s;
 }
-
 .otpButton:hover {
   background-color: #45a049;
 }
-
 .primaryButton {
   background-color: #4caf50;
   color: white;
@@ -93,17 +78,20 @@
   margin-top: 10px;
   transition: background-color 0.2s;
 }
-
 .primaryButton:hover {
   background-color: #45a049;
 }
-
 .footerText {
   margin-top: 30px;
 }
-
 .footerText a {
   color: #bbdefb;
   font-weight: bold;
   text-decoration: none;
+}
+.errorText {
+  color: #ffcdd2;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  margin-bottom: 0;
 }

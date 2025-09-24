@@ -1,61 +1,43 @@
 import React, { useState } from 'react';
 import './App.css';
 
-// 1. IMPORT the data from your new file
 import initialUserData from './data/migrantData.js';
-
-// Import all your components
+import RoleSelection from './portals/rolls/RoleSelection';
 import MigrantLogin from './portals/migrant/components/MigrantLogin';
 import Dashboard from './portals/migrant/components/Dashboard';
 import Profile from './portals/migrant/components/Profile';
-import SelectHospital from './portals/migrant/components/SelectHospital';
 import UploadDocuments from './portals/migrant/components/UploadDocuments';
+import SelectHospital from './portals/migrant/components/SelectHospital';
+import HealthDocuments from './portals/migrant/components/HealthDocuments';
 import MigrantRegistrationForm from './portals/migrant/components/MigrantRegistrationForm';
-
+import NgoRegistration from './portals/ngo/NgoRegistration';
 
 function App() {
-  // --- STATE MANAGEMENT ---
-  
-  // Tracks if the user is logged in to show the dashboard
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  
-  // Tracks the current view for the LOGGED-IN user (dashboard, profile, etc.)
-  const [currentView, setCurrentView] = useState('dashboard');
-  
-  // Tracks the current step for the LOGGED-OUT user (login, register, upload, etc.)
-  const [currentStep, setCurrentStep] = useState('login');
+  const [appMode, setAppMode] = useState('roleSelection');
 
-  // Holds the data for the logged-in user's dashboard
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentView, setCurrentView] = useState('dashboard');
+  const [currentStep, setCurrentStep] = useState('login');
   const [userData, setUserData] = useState(initialUserData);
-  
-  // Holds the data for a NEW user during the registration process
   const [registrationData, setRegistrationData] = useState({});
 
-  // --- HANDLER FUNCTIONS ---
-
-  // For the Login & Logout Flow
   const handleLoginSuccess = () => setIsLoggedIn(true);
   const handleLogout = () => {
     setIsLoggedIn(false);
-    setCurrentStep('login'); // Reset to login screen on logout
+    setAppMode('roleSelection');
   };
-
-  // For the Multi-Step Registration Flow
+  const navigateTo = (view) => setCurrentView(view);
   const handleRegistrationStep = (step, data = {}) => {
     setRegistrationData(prev => ({ ...prev, ...data }));
     setCurrentStep(step);
   };
-
   const handleFinalRegistrationSubmit = (finalData) => {
     const finalRegData = { ...registrationData, ...finalData };
     console.log("NEW USER REGISTERED:", finalRegData);
     alert("Registration successful! You can now log in.");
     setRegistrationData({});
-    setCurrentStep('login'); // After registration, return to the login page
+    setCurrentStep('login');
   };
-  
-  // For navigation within the Logged-In Dashboard view
-  const navigateTo = (view) => setCurrentView(view);
   const handleDocumentUpload = (docData) => {
     setUserData(prev => ({ ...prev, documents: [...prev.documents, docData.document] }));
     navigateTo('dashboard');
@@ -65,9 +47,6 @@ function App() {
     navigateTo('dashboard');
   };
 
-  // --- RENDER LOGIC ---
-
-  // Renders the correct screen for a LOGGED-IN user
   const renderLoggedInView = () => {
     switch (currentView) {
       case 'dashboard':
@@ -85,7 +64,6 @@ function App() {
     }
   };
 
-  // Renders the correct screen for a LOGGED-OUT user (Login or Registration steps)
   const renderLoggedOutView = () => {
     switch (currentStep) {
       case 'login':
@@ -93,6 +71,7 @@ function App() {
           <MigrantLogin
             onLoginSuccess={handleLoginSuccess}
             onNavigateToRegister={() => setCurrentStep('register')}
+            onBack={() => setAppMode('roleSelection')}
           />
         );
       case 'register':
@@ -121,10 +100,22 @@ function App() {
     }
   };
 
+  const renderApp = () => {
+    switch (appMode) {
+      case 'migrantFlow':
+        return isLoggedIn ? renderLoggedInView() : renderLoggedOutView();
+      case 'ngoFlow':
+        return <NgoRegistration onFinish={() => setAppMode('roleSelection')} />;
+      case 'roleSelection':
+      default:
+        return <RoleSelection onSelectMode={setAppMode} />;
+    }
+  };
+
   return (
     <div className="app-container">
       <main className="form-container">
-        {isLoggedIn ? renderLoggedInView() : renderLoggedOutView()}
+        {renderApp()}
       </main>
     </div>
   );
