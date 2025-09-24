@@ -10,7 +10,9 @@ import UploadDocuments from './portals/migrant/components/UploadDocuments';
 import SelectHospital from './portals/migrant/components/SelectHospital';
 import HealthDocuments from './portals/migrant/components/HealthDocuments';
 import MigrantRegistrationForm from './portals/migrant/components/MigrantRegistrationForm';
-import NgoRegistration from './portals/ngo/NgoRegistration';
+import BackgroundGraphics from './portals/migrant/components/BackgroundGraphics.jsx';
+import Header from './portals/migrant/components/Header.jsx'
+
 
 function App() {
   const [appMode, setAppMode] = useState('roleSelection');
@@ -114,6 +116,8 @@ function App() {
 
   return (
     <div className="app-container">
+      <BackgroundGraphics></BackgroundGraphics>
+      <Header></Header>
       <main className="form-container">
         {renderApp()}
       </main>
