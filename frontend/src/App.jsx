@@ -11,6 +11,8 @@ import Profile from './portals/migrant/components/Profile';
 import SelectHospital from './portals/migrant/components/SelectHospital';
 import UploadDocuments from './portals/migrant/components/UploadDocuments';
 import MigrantRegistrationForm from './portals/migrant/components/MigrantRegistrationForm';
+import BackgroundGraphics from './portals/migrant/components/BackgroundGraphics.jsx';
+import Header from './portals/migrant/components/Header.jsx'
 
 
 function App() {
@@ -123,6 +125,8 @@ function App() {
 
   return (
     <div className="app-container">
+      <BackgroundGraphics></BackgroundGraphics>
+      <Header></Header>
       <main className="form-container">
         {isLoggedIn ? renderLoggedInView() : renderLoggedOutView()}
       </main>

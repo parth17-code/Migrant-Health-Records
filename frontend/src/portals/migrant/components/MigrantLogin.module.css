@@ -23,15 +23,23 @@
   align-items: center;
 }
 .card {
-  background-color: #1565c0; /* Slightly lighter blue for the card */
+  display: flex;                 /* needed for justify/align to work */
+  flex-direction: column;        /* stack children vertically */
+  justify-content: center;       /* vertical alignment */
+  align-items: center;           /* horizontal alignment */
+  background-color: #1565c0;
   border: 2px dashed rgba(255, 255, 255, 0.7);
   border-radius: 20px;
-  padding: 40px;
-  width: 450px;
-  max-width: 90%;
+  padding: 30px 20px;            /* smaller horizontal padding on small screens */
+  width: 200rem;
+  max-width: 450px;              /* responsive max width */
   color: white;
   text-align: center;
+  box-sizing: border-box;        /* include padding in width */
+  overflow-y: auto;              /* scroll if content exceeds viewport */
+  max-height: 90vh;              /* prevents card from exceeding screen height */
 }
+
 
 .title {
   margin-top: 0;
@@ -60,6 +68,8 @@
   width: 100%;
   padding: 12px;
   border-radius: 8px;
+  background-color: white;
+  color: black;
   border: none;
   font-size: 1rem;
   box-sizing: border-box;
@@ -107,3 +117,4 @@
   font-weight: bold;
   text-decoration: none;
 }
+

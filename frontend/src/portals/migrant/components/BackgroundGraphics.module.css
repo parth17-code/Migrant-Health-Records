@@ -6,7 +6,7 @@
   left: 0;
   width: 100vw; /* 100% of viewport width */
   height: 100vh; /* 100% of viewport height */
-  background-image: url("../assets/logo.svg"); /* <---- REPLACE WITH YOUR IMAGE PATH */
+  background-image: url("/logo.svg"); /* <---- REPLACE WITH YOUR IMAGE PATH */
   background-size: cover; /* Ensures the image covers the whole area */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents image repetition */
